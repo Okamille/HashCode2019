@@ -23,11 +23,11 @@ def score_matrix(list_images):
 	return matrix
 # def create_matrix(list_images):
 
-A = Image(set([0,1,2,3]), 'H')
-B = Image(set([1,2,3, 4,5]), 'H')
-C = Image(set([1,2,5]), 'H')
-D = Image(set([1,2,4,5]), 'H')
-E = Image(set([1,5]), 'H')
+A = Image(set([0,1,2,3]), 'H', 3)
+B = Image(set([1,2,3, 4,5]), 'H', 3)
+C = Image(set([1,2,5, 10]), 'H',3)
+D = Image(set([1,2,4,5]), 'H', 3)
+E = Image(set([1,5]), 'H', 3)
 
 list_images = [A,B,C,D,E]
 
