@@ -1,4 +1,5 @@
 from image import Image
+from slide import Slide
 
 def load_file(path):
     with open(path) as file:
@@ -8,10 +9,10 @@ def load_file(path):
 
 def processLine(line):
     line = line.split(' ')
-    orientation = line[0]
+    type = line[0]
     n_tags = int(line[1])
     tags = [line[2 + i].rstrip('\n') for i in range(n_tags)]
-    return Image(tags=tags, orientation=orientation)
+    return Image(tags=tags, type=type)
 
 def findTag(tag, image_list):
     return [containsTag(image, tag) for image in image_list]

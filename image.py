@@ -1,4 +1,4 @@
 class Image:
-    def __init__(self, tags, orientation):
+    def __init__(self, tags, type):
         self.tags = tags
-        self.orientation = orientation
+        self.type = type
