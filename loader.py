@@ -11,7 +11,7 @@ def processLine(line, index):
     line = line.split(' ')
     type = line[0]
     n_tags = int(line[1])
-    tags = [line[2 + i].rstrip('\n') for i in range(n_tags)]
+    tags = set([line[2 + i].rstrip('\n') for i in range(n_tags)])
     return Image(tags=tags, type=type, index=index)
 
 def findTag(tag, image_list):
