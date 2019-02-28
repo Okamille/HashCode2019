@@ -5,6 +5,7 @@ Prends en param les images, calcule matrice des scores
 
 
 from image import Image
+from greedy import *
 
 import numpy as np
 
@@ -19,7 +20,10 @@ def score_matrix(list_images):
 	matrix = np.zeros((n,n))
 	for i in range(n):
 		for j in range(n):
-			matrix[i,j] = scoring(list_images[i], list_images[j])
+			if i==j:
+				matrix[i,j] = -1
+			else:
+				matrix[i,j] = scoring(list_images[i], list_images[j])
 	return matrix
 # def create_matrix(list_images):
 
@@ -31,9 +35,9 @@ E = Image(set([1,5]), 'H', 3)
 
 list_images = [A,B,C,D,E]
 
-print(score_matrix(list_images))
+print(np.argmax(score_matrix(list_images)))
 
 
 # print(scoring(A,B))
-
-
+for i in range(len(list_images)):
+	print(greedy(score_matrix(list_images),i))
